@@ -6,9 +6,31 @@
   <title>Nurdalifa Marzuki | Portofolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="gambar1.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
+  <script>
+  // Efek animasi scroll muncul
+  document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("scroll-visible");
+  });
+   document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('nav-menu');
+
+    toggle.addEventListener('click', function () {
+      menu.classList.toggle('show');
+    });
+  });
+</script>
+
+
   <header class="navbar">
+    <div class="menu-toggle" id="menu-toggle">
+  &#9776; <!-- Ini adalah ikon garis tiga -->
+</div>
+
     <div class="logo">
       <img src="gambar1.jpg" alt="Nurdalifa Marzuki" class="logo-img" />
       <div>
@@ -17,19 +39,19 @@
       </div>
     </div>
     <nav>
-      <ul>
+      <ul id="nav-menu">
         <li><a href="#beranda">BERANDA</a></li>
-        <li><a href="#pendidikan">RIWAYAT PENDIDIKAN</a></li>
-        <li><a href="#kontak">KONTAK</a></li>
+        <li><a href="#riwayat-pendidikan">RIWAYAT PENDIDIKAN</a></li>
+        <li><a href="#kontak-section">KONTAK</a></li>
         <li><a href="#alamat">ALAMAT</a></li>
-        <li><a href="#skill">SKILL</a></li>
-        <li><a href="#komentar">KOMENTAR</a></li>
+        <li><a href="#kartu-section">SKILL</a></li>
+        <li><a href="#komentar-section">KOMENTAR</a></li>
         <li><a href="#"><span class="search-icon">🔍</span></a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
+  <main class="scroll-container">
     <!-- BERANDA -->
     <section id="beranda" class="beranda">
       <div class="beranda-kiri">
@@ -37,55 +59,67 @@
 
       </div>
       <div class="beranda-kanan">
-        <h2>Selamat Datang di Portofolio Saya</h2>
+        <h2 class="typing-loop" id="selamat-datang">SELAMAT DA<span id="selamat-datang"></span></h2>
         <p>Saya Nurdalifa Marzuki, Mahasiswa Teknik Informatika dari Universitas Khairun yang saat ini berada pada semester 5 senang jika kalian berkunjung di portofolio saya terima kasih banyak dan sampai jumpa jika waktu mempertemukan kita di waktu yang berbeda.</p>
         <img src="gambar2.jpg" alt="Foto Saya" class="foto-samping" />
+        <audio id="bgMusic" autoplay loop>
+          <source src="vidioplayback.m4a" type="audio/mpeg">
+        </audio>
       </div>
     </section>
 <section class="riwayat-pendidikan">
-  <h2>Riwayat Pendidikan</h2>
+  <h2 class="pendidikan">Riwayat Pendidikan</h2>
   <div class="pendidikan-container">
     <div class="pendidikan-card">
-        <a href="https://www.sdnegeri1parigi.sch.id/">
-            <img src="image.png" alt="SDN 1 Parigi">
+        <a href="https://sekolahloka.com/data/sd-negeri-parigi/">
+            <img src="image1.png" alt="SDN 1 Parigi">
             <p class="tanggal">2011 - 2018</p>
             <h3>SDN 1 Parigi</h3>
         </a>
       
     </div>
     <div class="pendidikan-card">
-      <img src="image2.png" alt="SMPN 1 Parigi">
-      <p class="tanggal">2018 - 2020</p>
-      <h3>SMPN 1 Parigi</h3>
+      <a href="https://data-sekolah.zekolah.id/sekolah/smp-negeri-1-taliabu-timur-251074">
+        <img src="image2.png" alt="SMPN 1 Parigi">
+        <p class="tanggal">2018 - 2020</p>
+        <h3>SMPN 1 Parigi</h3>
+      </a>
     </div>
     <div class="pendidikan-card">
-      <img src="image.png" alt="SMKN 3 HAL-TENG">
-      <p class="tanggal">2020 - 2023</p>
-      <h3>SMKN 3 HAL-TENG</h3>
+      <a href="https://data-sekolah.zekolah.id/sekolah/smkn-3-halmahera-tengah-162263">
+        <img src="image.png" alt="SMKN 3 HAL-TENG">
+        <p class="tanggal">2020 - 2023</p>
+        <h3>SMKN 3 HAL-TENG</h3>
+      </a>
     </div>
     <div class="pendidikan-card">
-      <img src="Logo Unkhair.png" alt="UNIVERSITAS KHAIRUN">
-      <p class="tanggal">2023 - Sekarang</p>
-      <h3>UNIVERSITAS KHAIRUN</h3>
+      <a href="https://unkhair.ac.id/">
+        <img src="Logo Unkhair.png" alt="UNIVERSITAS KHAIRUN">
+        <p class="tanggal">2023 - Sekarang</p>
+        <h3>UNIVERSITAS KHAIRUN</h3>
+      </a>
     </div>
   </div>
 </section>
     <!-- SKILL -->
     <section id="skill" class="kartu-section">
-      <h2>Keahlian</h2>
+      <h2 id="skill">Keahlian</h2>
+
       <div class="deskripsi-box">
         <p>Saya Dari Maffa tepatnya di kabupaten halmahera selatan, belajar di informatika itu menarik yahhh apalagi IT yang saat ini seolah menjadi kebutuhan utama. namun bagi mereka yang sudah merasakannya pasti taulah apa itu dan apa itu... hehehe semangat terus para pejuang S.Kom</p>
       </div>
       <div class="skills-wrapper">
-  <div class="skill-box">
-    <span class="skill-name">HTML</span>
-    <span class="skill-level-text">Advanced</span>
-    <div class="skill-bar">
+         <div class="skill-box">
+            <img class="img-scill" src="html.png" alt="HTML">
+            <span class="skill-name">HTML</span>
+            <span class="skill-level-text">Advanced</span>
+          <div class="skill-bar">
       <div class="skill-level" style="width: 90%;"></div>
     </div>
   </div>
 
   <div class="skill-box">
+    <img class="img-scill" src="css.png" alt="CSS">
     <span class="skill-name">CSS</span>
     <span class="skill-level-text">Advanced</span>
     <div class="skill-bar">
@@ -94,15 +128,24 @@
   </div>
 
   <div class="skill-box">
-    <span class="skill-name">JavaScript</span>
+    <img class="img-scill" src="python.webp" alt="Python">
+    <span class="skill-name">Python</span>
     <span class="skill-level-text">Middle</span>
     <div class="skill-bar">
-      <div class="skill-level" style="width: 65%;"></div>
+      <div class="skill-level" style="width: 60%;"></div>
     </div>
   </div>
-
   <div class="skill-box">
-    <span class="skill-name">Python</span>
+    <img class="img-scill" src="javascript.webp" alt="Javascript">
+    <span class="skill-name">Java Script</span>
+    <span class="skill-level-text">Middle</span>
+    <div class="skill-bar">
+      <div class="skill-level" style="width: 60%;"></div>
+    </div>
+  </div>
+  <div class="skill-box">
+    <img class="img-scill" src="php.png" alt="PHP">
+    <span class="skill-name">PHP</span>
     <span class="skill-level-text">Middle</span>
     <div class="skill-bar">
       <div class="skill-level" style="width: 60%;"></div>
@@ -115,7 +158,8 @@
     <!-- KOMENTAR -->
     <section id="komentar" class="komentar-section">
       <div class="komentar-box">
-        <h2>Komentar</h2>
+        <h2 class="komentar">Komentar</h2>
+
         <form id="komentar-form">
           <input type="text" name="nama" placeholder="Nama" required />
           <textarea name="pesan" placeholder="Komentar Anda" required></textarea>
@@ -129,12 +173,12 @@
 
     <!-- KONTAK -->
     <section id="kontak" class="kontak-section">
-      <h2>Kontak</h2>
+      <h2 class="kontak">Kontak</h2>
       <div class="kontak-container">
         <div class="kontak-info">
-          <p><a href="http:nurdalifamarzuki05@gmail.com">📧 nurdalifamarzuki05@gmail.com</a></p>
-          <p><a href="https://www.instagram.com/nrdlifa">@ Myinstagram</a></p>
-          <p><a href="https://wa.me/6282296863858">📞 +6282296863858</a></p>
+           <a href="http:" class="kontak-icon"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/6282296863858" target="_blank" class="kontak-icon"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://nurdalifamarzuki05@gmail.com" class="kontak-icon"><i class="fas fa-envelope"></i></a>
         </div>
         <form class="kontak-form">
           <input type="text" placeholder="Nama" required />
@@ -146,8 +190,8 @@
     </section>
 
     <!-- ALAMAT -->
-    <section id="alamat">
-      <h2>Alamat</h2>
+    <section id="alamat" class="alamat">
+      <h2 class="alamat">Alamat</h2>
       <p>Jl.jati metro, Kelurahan Jati, Kota Ternate, Maluku Utara</p>
     </section>
   </main>
