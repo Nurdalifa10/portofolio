@@ -115,6 +115,7 @@ nav a:hover {
   border-radius: 10px;
   margin-bottom: 2rem;
   max-width: 700px;
+  font-size: 18px;
 }
 
 /* Komentar */
@@ -214,7 +215,7 @@ footer {
 .riwayat-pendidikan {
   padding: 40px 20px;
   background-color: #111;
-  color: white;
+  color: #00ffd5;
   font-family: 'Segoe UI', sans-serif;
 }
 
@@ -287,18 +288,29 @@ footer {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
+#skill {
+ color: #00ffd5;
+ font-family: 'Segoe UI', sans-serif;
+ font-size: 28px;
+ padding: 20px 10px;
+ 
+}
+
+
 .skills-wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  color: #00ffd5;
 }
 
 .skill-box {
+  display: block;
   background-color: #1e1e1e;
   padding: 15px 20px;
   border-radius: 12px;
   width: 200px;
-  color: white;
+  color: #00ffd5;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   transition: transform 0.3s ease;
 }
@@ -309,7 +321,7 @@ footer {
 
 .skill-name {
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 18px;
 }
 
 .skill-level-text {
@@ -330,4 +342,222 @@ footer {
   background-color: #00ffd5;
   height: 100%;
   transition: width 0.4s ease;
+}
+ /* Tambahkan ini di bagian akhir style.css */
+
+/* 1. Animasi garis bawah pada navbar saat hover */
+nav ul li a {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 0;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #00bcd4;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* 2. Efek Ketik Looping (Typing loop effect) */
+.typing-loop {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blink 1s step-end infinite;
+  border-right: 2px solid #1017f3e2; /* efek kursor */
+   font-size:40px;
+   color: #00ffd5;
+}
+
+@keyframes blink {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #0f38ece4; }
+ 
+}
+
+.typing-loop span {
+  display: inline;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+.skill-box {
+  display: block;
+  background-color: #1e1e1e;
+  padding: 15px 20px;
+  border-radius: 12px;
+  width: 150px;
+  color: #00ffd5;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+.pendidikan-card {
+  background-color: #1e1e1e;
+  border-right: 2px solid #333; /* garis pemisah */
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 180px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  box-shadow: inset 0 0 0 1px #2b2b2b;
+}
+section.scroll-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.img-scill {
+  width: 60px;
+  height: 60px;
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #444;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+.alamat{
+  color: #00ffd5;
+  padding-bottom: 4px;
+}
+.contact{
+  color: #00ffd5;
+}
+.kontak-info {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.kontak-icon {
+  font-size: 5rem; /* ukuran lebih besar */
+  color: #00bcd4;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.kontak-icon:hover {
+  color: #fff;
+  transform: scale(1.3);
+}
+
+/* 5. Responsive tweak untuk animasi dan ikon */
+@media (max-width: 768px) {
+  @media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+    z-index: 1001;
+  }
+
+  nav ul {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    display: none;
+    z-index: 1000;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    width: 100%;
+    padding: 0.5rem 1rem;
+  }
+
+  nav ul li a {
+    width: 100%;
+    display: block;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: relative;
+    z-index: 1002;
+  }
+}
+
+  .typing-loop {
+    font-size: 1.2rem;
+  }
+  .kontak-icon {
+    font-size: 2.2rem;
+  }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+  }
+  nav ul.show {
+    display: flex;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: relative;
+  }
+}
+
+/* 6. Default state of hamburger icon (hidden on desktop) */
+.menu-toggle {
+  display: none;
+}
+/* Pastikan menu-toggle muncul saat mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  nav ul.show {
+    display: flex;
+    flex-direction: column;
+  }
 }
